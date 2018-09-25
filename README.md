@@ -1,5 +1,5 @@
 # CycleGAN-pytorch  
-the pytorch version of pix2pix 
+the pytorch version of cyclegan 
 
 ## Requirments 
 - CUDA 8.0+  
