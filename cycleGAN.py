@@ -21,7 +21,7 @@ from utils import ReplayBuffer, LambdaLR, sample_images
 #load the args
 args = TrainOptions().parse()
 # Calculate output of size discriminator (PatchGAN)
-patch = (1, args.img_height//(2**args.n_D_layers*4) , args.img_width//(2**args.n_D_layers*4))
+patch = (1, args.img_height//(2**args.n_D_layers) - 2 , args.img_width//(2**args.n_D_layers) - 2)
 
 # Initialize generator and discriminator
 G__AB, D__B, G__BA, D__A = Create_nets(args)
