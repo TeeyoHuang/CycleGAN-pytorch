@@ -123,14 +123,14 @@ class Discriminator_n_layers(nn.Module):
             '''
             for k in range(1,4): # k=1,2,3
                 sequence += [*discriminator_block(2**(5+k), 2**(6+k))]
-                # k=4
-                sequence += [*discriminator_block(2**9, 2**9)] #
+            # k=4
+            sequence += [*discriminator_block(2**9, 2**9)] #
             out_filters = 2**9
 
         num_of_filter = min(2*out_filters, 2**9)
 
-        sequence += [*discriminator_block(out_filters, num_of_filter, k=4, s=2, p=1)]
-        sequence += [*discriminator_block(num_of_filter, 1, k=4, s=2, p=1, norm=False, sigmoid=False)]
+        sequence += [*discriminator_block(out_filters, num_of_filter, k=4, s=1, p=1)]
+        sequence += [*discriminator_block(num_of_filter, 1, k=4, s=1, p=1, norm=False, sigmoid=False)]
 
         self.model = nn.Sequential(*sequence)
 
